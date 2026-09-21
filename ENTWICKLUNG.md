@@ -782,6 +782,59 @@ Ein Repository ohne Vorgeschichte hat dieses Problem nicht. Die sechzehn
 Milestones sind als Text ohnehin hier; was verloren geht, ist die Aufteilung in
 Commits, und die wog weniger.
 
+## Milestone 18 — Was der Selbsttest wirklich misst
+
+Erster Lauf des Schilds auf echter Hardware unter R8: Galaxy S25, Android 16,
+signierter Release-Build. Der Selbsttest meldete
+
+> Blocked after 232 ms via overlay — slow enough to notice.
+
+in Orange, weil `GOOD_LATENCY_MS` bei 150 liegt. Zwei Schlüsse lagen nahe und
+waren beide falsch.
+
+**„Der Overlay ist der Fallback“ — nein, er ist der Hauptpfad.**
+`BlockPresenter` probiert die Aktivität gar nicht erst: Auf genau diesem Gerät
+verwirft One UI den Aktivitätsstart aus dem Hintergrund stillschweigend,
+`startActivity` kehrt normal zurück und es entsteht nie ein Fenster. Das zuerst
+zu versuchen kostete anderthalb Sekunden, in denen die gesperrte App sichtbar
+blieb. Ein Overlay-Fenster zeichnet dagegen auf jedem ROM in wenigen
+Millisekunden. „via overlay“ ist also die gute Nachricht, nicht die schlechte.
+
+**„232 ms sind die Erkennungslatenz“ — nein, es ist die Summe.** `SelfTest`
+misst von `startActivity` der *gesperrten* App bis zum Feuern der Sperre. Darin
+steckt der Kaltstart der Zielanwendung, den H4b1ts nicht beeinflussen kann.
+Nachgemessen mit `am start -W`:
+
+| | |
+|---|---|
+| Selbsttest, Ende zu Ende | 232 ms |
+| Kaltstart von Adobe Scan allein | 141 ms (`WaitTime`) |
+| Rest für Erkennung, `goHome()` und Overlay | **rund 91 ms** |
+
+Die Mechanik liegt damit deutlich unter der eigenen Schwelle. Gewarnt hat die
+App über eine Zahl, die zu großen Teilen einer fremden App gehört — und Adobe
+Scan ist schwer. Bei einer leichten App würde derselbe Schild als schnell
+gelten.
+
+**Was daraus folgt, ist eine Entscheidung über die Messung, nicht über den
+Schild.** Drei Möglichkeiten, keine davon umgesetzt:
+
+- Die Schwelle anheben, weil sie faktisch gegen Ende-zu-Ende-Zeit prüft.
+- Ab dem erkannten Vordergrundwechsel messen statt ab `startActivity`. Das
+  misst, was die App steuert — verliert aber genau das, was der Nutzer spürt.
+- So lassen und die Meldung umformulieren: Nicht „zu langsam“, sondern „so
+  lange war die App sichtbar“. Ehrlicher, und es erklärt, warum eine schwere
+  App schlechter abschneidet.
+
+Der Messwert ist indikativ, nicht exakt: Beim Nachmessen feuerte der Schild
+während des Starts mit, was `WaitTime` beeinflusst haben kann.
+
+**Was der Lauf sonst bewies.** Das System löste
+`de.h4b1ts.app.block.H4b1tsAccessibilityService` auf und band den Dienst —
+hätte R8 die Klasse umbenannt, wäre genau das fehlgeschlagen. Sperrbildschirm,
+Fünf-Sekunden-Reibung, Ein-Minuten-Ausnahme und die Zehn-Minuten-Abkühlphase
+beim Entsperren liefen alle wie vorgesehen.
+
 ## Signieren und Veröffentlichen
 
 Der Upload-Schlüssel wird mit `keytool` erzeugt, außerhalb des Repos. Die
