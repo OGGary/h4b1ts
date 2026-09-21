@@ -133,7 +133,7 @@ von Cloud-Sicherungen ausgenommen. Es verschwindet rückstandslos, wenn Sie die
 App deinstallieren oder unter *Einstellungen → Apps → H4b1ts → Speicher* die
 App-Daten löschen.
 
-Vollständig: [Datenschutzerklärung](https://oggary.github.io/h4b1ts/datenschutz.html)
+Vollständig: [Datenschutzerklärung](https://oggary.github.io/h4b1ts/datenschutz.html) · [Impressum](https://oggary.github.io/h4b1ts/impressum.html)
 
 ---
 

@@ -111,7 +111,7 @@ Die Antworten sind hier ungewöhnlich einfach, weil die App keine
 | Werden Daten an Dritte weitergegeben? | **Nein** |
 | Verschlüsselung bei der Übertragung | entfällt — es wird nichts übertragen |
 | Können Nutzer Löschung beantragen? | Nein nötig; Löschung erfolgt lokal über App-Daten löschen oder Deinstallation |
-| Datenschutzerklärung | URL der veröffentlichten `docs/datenschutz.html` |
+| Datenschutzerklärung | `https://oggary.github.io/h4b1ts/datenschutz.html` |
 
 **Wichtig für das Formular:** „Erhebung" im Sinne von Play bedeutet
 *Übertragung vom Gerät weg*. Daten, die die App ausschließlich lokal speichert
