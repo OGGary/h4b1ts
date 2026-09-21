@@ -168,17 +168,24 @@ Kontoeinstellung Englisch erwartet.
 |---|---|---|
 | App-Symbol | 512 × 512 PNG, 32 Bit | **vorhanden** — `branding/playstore-icon-512.png` |
 | Feature-Grafik | 1024 × 500 PNG/JPG | **vorhanden** — `branding/playstore-feature-1024x500.png` |
-| Screenshots Telefon | mind. 2, max. 8; kurze Seite ≥ 320 px | **4 vorhanden** — `branding/screenshots/`, 1080 × 2340 |
+| Screenshots Telefon | mind. 2, max. 8; kurze Seite ≥ 320 px | **6 vorhanden** — `branding/screenshots/`, 1080 × 2340 |
 | Screenshots Tablet | optional | — |
 
 Aufgenommen auf einem Galaxy S25 (Android 16) aus dem signierten
-Release-Build: Today, Habits, Plan, Shield.
+Release-Build, mit erteilten Berechtigungen:
 
-**Vor dem Upload neu aufnehmen.** In der Statusleiste steht ein
-Benachrichtigungssymbol — zulässig, aber schlampig. Mit eingeschaltetem
-„Nicht stören" wird der Satz sauber. Es fehlen außerdem die beiden Ansichten,
-die das Produkt eigentlich ausmachen: der Sperrbildschirm und eine
-Fokus-Sitzung. Beide brauchen erteilte Berechtigungen.
+| Datei | Zeigt |
+|---|---|
+| `1-today.png` | Tagesansicht mit Serie und Fortschritt |
+| `2-habits.png` | Gewohnheiten mit Identitätssatz und Wochentagen |
+| `3-plan.png` | Aufgaben |
+| `4-shield.png` | Schild mit Selbsttest-Ergebnis und Berechtigungen |
+| `5-block.png` | **der Sperrbildschirm** — das Unterscheidungsmerkmal |
+| `6-focus.png` | Fokus-Sitzung, Dauer und strenger Modus |
+
+**Vor dem Upload neu aufnehmen.** In der Statusleiste stehen
+Benachrichtigungssymbole — zulässig, aber schlampig. Mit eingeschaltetem
+„Nicht stören" wird der Satz sauber.
 
 ---
 
