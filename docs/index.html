@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H4b1ts</title>
+<style>
+  :root {
+    --bg: #0E0E14;
+    --surface: #16161F;
+    --text: #E8E8EE;
+    --mid: #9A9AA8;
+    --accent: #C6FF00;
+    --line: #2A2A36;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 48px 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, Consolas, monospace;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  main { max-width: 34rem; margin: 0 auto; width: 100%; }
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin: 0 0 8px;
+    color: var(--accent);
+  }
+  .tag { color: var(--text); margin: 0 0 4px; }
+  .sub { color: var(--mid); margin: 0 0 40px; font-size: 0.9rem; }
+  nav { display: flex; flex-direction: column; gap: 10px; }
+  nav a {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav a:hover { border-color: var(--accent); }
+  nav a span { display: block; color: var(--mid); font-size: 0.82rem; }
+  footer { margin-top: 40px; color: var(--mid); font-size: 0.82rem; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>H4B1TS</h1>
+<p class="tag">Gewohnheiten aufbauen. Ablenkung aussperren.</p>
+<p class="sub">Habit-Tracker mit App-Sperre für Android.
+  Kein Konto, keine Werbung, keine Internet-Berechtigung.</p>
+
+<nav>
+  <a href="datenschutz.html">Datenschutzerklärung
+    <span>Was die App speichert — und warum nichts das Gerät verlässt</span></a>
+  <a href="impressum.html">Impressum
+    <span>Angaben gemäß § 5 DDG</span></a>
+  <a href="https://github.com/OGGary/h4b1ts">Quellcode auf GitHub
+    <span>Kotlin und Jetpack Compose, vollständig einsehbar</span></a>
+</nav>
+
+<footer>
+  Diese Seite begleitet die App. Sie selbst erhebt keine Daten und setzt keine
+  Cookies.
+</footer>
+
+</main>
+</body>
+</html>
