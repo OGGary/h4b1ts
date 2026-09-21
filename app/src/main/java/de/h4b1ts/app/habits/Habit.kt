@@ -4,20 +4,20 @@ import java.time.DayOfWeek
 import java.time.LocalDate
 
 /**
- * A habit as Atomic Habits frames it, not as a to-do list does.
+ * A habit as the identity model frames it, not as a to-do list does.
  *
  * The distinguishing field is [identity]. A goal ("run 5k") ends when it is
  * reached; an identity ("I am someone who moves every day") is voted for by every
  * completion and never finishes. Everything else here exists to serve one of the
- * four laws.
+ * four conditions that make a habit stick.
  */
 /**
  * Whether the habit is one you are building or one you are breaking.
  *
- * Atomic Habits states the four laws and then inverts every one of them for bad
- * habits, so the model needs both directions. The difference is not cosmetic: for
- * a negative habit a tick means "I stayed away today", which is a different act
- * from "I did it today" even though both are one vote for the same sentence.
+ * The four conditions that build a habit invert cleanly for breaking one, so the
+ * model needs both directions. The difference is not cosmetic: for a negative
+ * habit a tick means "I stayed away today", which is a different act from "I did
+ * it today" even though both are one vote for the same sentence.
  */
 enum class Polarity(val prefix: String, val doneVerb: String) {
     POSITIVE("I am someone who", "done"),

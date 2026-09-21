@@ -36,10 +36,10 @@ import java.time.LocalDate
 /**
  * A weekly look back, kept deliberately short.
  *
- * Atomic Habits asks for a periodic review, and it also warns what happens when
- * the measurement becomes the goal. So this is not a dashboard: a wall of charts
- * would turn an app about restraint into one more thing to open for a hit, which
- * is precisely what it was built to prevent.
+ * The periodic review belongs to the method, and so does the warning about what
+ * happens when the measurement becomes the goal. So this is not a dashboard: a
+ * wall of charts would turn an app about restraint into one more thing to open
+ * for a hit, which is precisely what it was built to prevent.
  *
  * It also shows the uncomfortable figures. A screen that only reports wins is a
  * flattery machine; the number worth having is how often the shield came up and

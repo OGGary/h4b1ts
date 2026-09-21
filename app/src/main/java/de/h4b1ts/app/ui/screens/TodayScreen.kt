@@ -468,9 +468,9 @@ private fun ProgressHero(done: Int, total: Int) {
                     Spacer(Modifier.width(6.dp))
                 }
                 Text(
-                    // "votes cast" is the Atomic Habits framing, and it only
-                    // makes sense once you already know the book. The number
-                    // above is a count of habits, so the label says so.
+                    // "votes cast" is the framing the app is built on, but it
+                    // only reads that way once you already think in it. The
+                    // number above is a count of habits, so the label says so.
                     text = if (done == total) "all habits done" else "habits done today",
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     fontSize = 15.sp,

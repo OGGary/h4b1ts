@@ -49,11 +49,11 @@ import de.h4b1ts.app.ui.components.H4Card
 /**
  * How the entry in the scorecard was judged.
  *
- * Atomic Habits asks you to list what you already do and mark each line good,
- * neutral or bad before changing anything — you cannot improve a habit you have
- * not noticed. Here that inventory is also the fastest way into the app: the
- * plus lines become positive habits, the minus lines become negative ones, and
- * the minus lines are exactly the ones worth blocking apps for.
+ * The inventory comes before any change: list what you already do and mark each
+ * line good, neutral or bad — you cannot improve a habit you have not noticed.
+ * Here that inventory is also the fastest way into the app: the plus lines become
+ * positive habits, the minus lines become negative ones, and the minus lines are
+ * exactly the ones worth blocking apps for.
  */
 /**
  * The marks used to be typographic: +, = and a real minus sign. Pixelbasel has no
