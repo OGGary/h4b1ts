@@ -168,11 +168,17 @@ Kontoeinstellung Englisch erwartet.
 |---|---|---|
 | App-Symbol | 512 × 512 PNG, 32 Bit | **vorhanden** — `branding/playstore-icon-512.png` |
 | Feature-Grafik | 1024 × 500 PNG/JPG | **vorhanden** — `branding/playstore-feature-1024x500.png` |
-| Screenshots Telefon | mind. 2, max. 8; kurze Seite ≥ 320 px | fehlt |
+| Screenshots Telefon | mind. 2, max. 8; kurze Seite ≥ 320 px | **4 vorhanden** — `branding/screenshots/`, 1080 × 2340 |
 | Screenshots Tablet | optional | — |
 
-Screenshots müssen vom Gerät kommen. Sinnvolle Auswahl: Today, Habits mit
-Heatmap, Sperrbildschirm, Fokus-Sitzung, Shield-Tab.
+Aufgenommen auf einem Galaxy S25 (Android 16) aus dem signierten
+Release-Build: Today, Habits, Plan, Shield.
+
+**Vor dem Upload neu aufnehmen.** In der Statusleiste steht ein
+Benachrichtigungssymbol — zulässig, aber schlampig. Mit eingeschaltetem
+„Nicht stören" wird der Satz sauber. Es fehlen außerdem die beiden Ansichten,
+die das Produkt eigentlich ausmachen: der Sperrbildschirm und eine
+Fokus-Sitzung. Beide brauchen erteilte Berechtigungen.
 
 ---
 
