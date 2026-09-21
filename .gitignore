@@ -1,0 +1,17 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Signing. The keystore and its passwords never go in the repo: anyone with both
+# can publish an update as you.
+keystore.properties
+*.jks
+*.keystore

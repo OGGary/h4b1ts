@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The focus lock. Same pure black as the shield, because it is the same kind of
+    thing: a state, not a surface. The difference is that the shield names the app
+    you may not open, and this names the work you meant to do instead.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pixelbasel"
+            android:text="@string/focus_eyebrow"
+            android:textColor="#7E7E8F"
+            android:textSize="14sp"
+            android:letterSpacing="0.12"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/focusClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/pixelbasel"
+            android:textColor="#F5F5F8"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/focusSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pixelbasel"
+            android:text="@string/focus_left"
+            android:textColor="#9A9AAE"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/focusList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical" />
+
+        <Button
+            android:id="@+id/focusHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/pixelbasel"
+            android:text="@string/focus_home"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2B2B36" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Deliberately empty. The Play build adds nothing to the main manifest; what
+    defines it is the accessibility service it leaves out.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />

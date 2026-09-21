@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">H4b1ts</string>
+
+    <string name="accessibility_service_label">H4b1ts app lock</string>
+    <string name="accessibility_service_description">Detects which app comes to the foreground and shows the lock screen when you have blocked that app. H4b1ts does not read any screen content.</string>
+
+    <string name="setup_eyebrow">H4B1TS</string>
+    <string name="setup_title">Milestone 2 — resilience</string>
+
+    <string name="setup_accessibility_title">Accessibility service</string>
+    <string name="setup_accessibility_on">Active — blocking is running.</string>
+    <string name="setup_accessibility_off">Without this service H4b1ts cannot detect any app.</string>
+    <string name="setup_accessibility_action_on">Open settings</string>
+    <string name="setup_accessibility_action_off">Enable now</string>
+
+    <string name="setup_overlay_title">Display over other apps</string>
+    <string name="setup_overlay_on">Granted — this is how the lock screen appears.</string>
+    <string name="setup_overlay_off">Required. Most phones refuse to show the lock screen without it.</string>
+    <string name="setup_overlay_action">Allow</string>
+
+    <string name="setup_usage_title">Usage access</string>
+    <string name="setup_usage_on">Granted — backup detector available.</string>
+    <string name="setup_usage_off">Lets H4b1ts keep blocking if the service is stopped.</string>
+    <string name="setup_usage_action">Grant</string>
+
+    <string name="setup_fallback_title">Backup detector</string>
+    <string name="setup_fallback_on">Running. Slower, but survives a stopped service.</string>
+    <string name="setup_fallback_off">Off. Turn on if blocking stops working after standby.</string>
+
+    <string name="setup_apps_title">Blocked apps (%1$d)</string>
+
+    <string name="selftest_title">Does blocking work?</string>
+    <string name="selftest_body">Opens one of your blocked apps and measures how long it stays visible.</string>
+    <string name="selftest_action">Run test</string>
+    <string name="selftest_running">Waiting for the result…</string>
+    <string name="selftest_passed">Blocked after %1$d ms via %2$s.</string>
+    <string name="selftest_slow">Blocked after %1$d ms via %2$s — slow enough to notice.</string>
+    <string name="selftest_no_app">Block at least one app first.</string>
+    <string name="selftest_not_launchable">That app cannot be opened directly.</string>
+    <string name="selftest_no_block">No block fired. Grant display over other apps and try again.</string>
+
+    <string name="oem_title">%1$s specific setup</string>
+    <string name="oem_open">Open</string>
+
+    <string name="block_locked">is locked right now</string>
+    <string name="block_dismiss">Back to home screen</string>
+    <string name="block_bypass_waiting">Open anyway in %1$ds</string>
+    <string name="block_bypass_ready">Open anyway (1 minute)</string>
+
+    <string name="health_channel_name">Blocking stopped</string>
+    <string name="health_title">H4b1ts is not blocking</string>
+    <string name="health_service_off">The accessibility service was switched off, which can happen after an app update. Tap to turn it back on.</string>
+    <string name="health_usage_off">H4b1ts has no usage access, so it cannot tell which app is in front and nothing is being blocked. Tap to grant it.</string>
+    <string name="health_detector_off">The detector is not running, so nothing is being blocked. This can happen after an app update. Tap to start it again.</string>
+    <string name="health_stale">The service is enabled but has not seen any activity for hours. Your phone may have stopped it in the background.</string>
+
+    <string name="gate_always">Always blocked</string>
+    <string name="gate_until">Unlocks after: %1$s</string>
+    <string name="gate_pick_title">Unlock this app by</string>
+    <string name="gate_none">Keep always blocked</string>
+    <string name="gate_no_habits">Create a habit first, then it can unlock apps.</string>
+    <string name="gate_unlocks">unlocks %1$d app(s)</string>
+
+    <string name="setup_detector_title">App detector</string>
+    <string name="setup_detector_on">Running. This is what blocks your apps.</string>
+    <string name="setup_detector_off">Off — nothing is being blocked.</string>
+
+    <string name="reminder_channel_name">Reminders</string>
+
+    <string name="focus_eyebrow">FOCUS</string>
+    <string name="focus_left">left</string>
+    <string name="focus_home">Back to home</string>
+    <string name="focus_nothing">Nothing scheduled. The time is yours.</string>
+
+    <string name="fallback_channel_name">Backup detector</string>
+    <string name="fallback_notification_title">H4b1ts is guarding</string>
+    <string name="fallback_notification_text">Backup detector is running.</string>
+</resources>

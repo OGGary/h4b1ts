@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.H4b1ts" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Covers any View-based text the Compose typography never reaches. -->
+        <item name="android:fontFamily">@font/pixelbasel</item>
+    </style>
+
+    <style name="Theme.H4b1ts.Block" parent="Theme.H4b1ts">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>

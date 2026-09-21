@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — H4b1ts</title>
+<style>
+  :root {
+    --bg: #0E0E14;
+    --surface: #16161F;
+    --text: #E8E8EE;
+    --mid: #9A9AA8;
+    --accent: #C6FF00;
+    --line: #2A2A36;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 16px 96px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, Consolas, monospace;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.75rem; letter-spacing: 0.06em; margin: 0 0 4px; }
+  .sub { color: var(--mid); margin: 0 0 48px; font-size: 0.9rem; }
+  h2 {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    margin: 48px 0 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  h2 .n { color: var(--accent); margin-right: 0.6em; }
+  a { color: var(--accent); }
+  .lede {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 0 0 8px;
+  }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--mid); font-weight: normal; letter-spacing: 0.04em; }
+  code { background: var(--surface); padding: 1px 5px; font-size: 0.85em; }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--mid); font-size: 0.82rem; }
+  @media (max-width: 560px) {
+    body { padding: 32px 16px 64px; font-size: 15px; }
+    table { font-size: 0.8rem; }
+    th, td { padding: 8px 6px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Datenschutzerklärung</h1>
+<p class="sub">H4b1ts — Habit-Tracker mit App-Sperre · Stand: 21. September 2026</p>
+
+<p class="lede">
+  <strong>H4b1ts erhebt keine personenbezogenen Daten und überträgt keine Daten an
+  den Anbieter oder an Dritte.</strong> Alles, was Sie in der App eingeben, bleibt
+  auf Ihrem Gerät. Das ist keine Selbstverpflichtung, sondern eine Eigenschaft des
+  Programms: Die App besitzt keine Internet-Berechtigung
+  (<code>android.permission.INTERNET</code>). Ohne diese Berechtigung kann eine
+  Android-App technisch keine Netzwerkverbindung aufbauen. Es sind weder
+  Analyse-, Werbe- noch Absturzberichts-Bibliotheken eingebunden.
+</p>
+
+<h2><span class="n">1</span>Verantwortlicher</h2>
+<p>Verantwortlich im Sinne von Art. 4 Nr. 7 DSGVO:</p>
+<p>
+  [NAME]<br>
+  [STRASSE UND HAUSNUMMER]<br>
+  [PLZ UND ORT]<br>
+  E-Mail: [KONTAKT-E-MAIL]
+</p>
+
+<h2><span class="n">2</span>Welche Daten auf dem Gerät gespeichert werden</h2>
+<p>
+  Die App speichert ausschließlich im app-privaten internen Speicher
+  (<code>filesDir</code>). Dieser Bereich ist für andere Apps nicht lesbar und wird
+  vollständig gelöscht, sobald Sie H4b1ts deinstallieren.
+</p>
+<table>
+  <tr><th>Datei</th><th>Inhalt</th></tr>
+  <tr><td><code>habits.json</code></td><td>Ihre Gewohnheiten, Identitätssätze und Erledigungen</td></tr>
+  <tr><td><code>tasks.json</code></td><td>Aufgaben und deren Fälligkeiten</td></tr>
+  <tr><td><code>notes.json</code></td><td>Ihre Notizen</td></tr>
+  <tr><td><code>attachments.json</code></td><td>Verweise auf selbst hinzugefügte Bilder</td></tr>
+  <tr><td><code>stats.json</code></td><td>Tageszähler über erledigte Gewohnheiten (rund 400 Tage)</td></tr>
+  <tr><td><code>reminders.json</code></td><td>Ihre Erinnerungszeiten</td></tr>
+  <tr><td><code>app_groups.json</code></td><td>Von Ihnen gesperrte Apps und deren Gruppierung</td></tr>
+  <tr><td>Bildordner</td><td>Kopien der Bilder, die Sie selbst einer Notiz hinzufügen</td></tr>
+</table>
+<p>
+  Es gibt kein Nutzerkonto, keine Registrierung und keine Anmeldung. Ein
+  Cloud-Backup findet nicht statt: Die App ist mit
+  <code>allowBackup="false"</code> ausdrücklich von Android-Sicherungen
+  ausgenommen.
+</p>
+
+<h2><span class="n">3</span>Berechtigungen und wozu sie dienen</h2>
+<table>
+  <tr><th>Berechtigung</th><th>Zweck</th></tr>
+  <tr>
+    <td>Zugriff auf Nutzungsdaten<br><code>PACKAGE_USAGE_STATS</code></td>
+    <td>Erkennt, welche App gerade im Vordergrund ist, damit eine von Ihnen
+        gesperrte App blockiert werden kann. Ausgewertet wird ausschließlich der
+        Paketname der aktuell sichtbaren App, und zwar nur im Arbeitsspeicher.
+        Er wird nicht gespeichert und verlässt das Gerät nicht. Es wird
+        <em>kein</em> Nutzungsverlauf und keine Nutzungsdauer erhoben.</td>
+  </tr>
+  <tr>
+    <td>Über anderen Apps anzeigen<br><code>SYSTEM_ALERT_WINDOW</code></td>
+    <td>Blendet den Sperrbildschirm ein, wenn das Herstellersystem den Start einer
+        Aktivität aus dem Hintergrund unterbindet.</td>
+  </tr>
+  <tr>
+    <td>Vordergrunddienst<br><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
+    <td>Hält die Erkennung am Laufen, solange der Bildschirm an ist. Der Dienst
+        pausiert bei ausgeschaltetem Bildschirm.</td>
+  </tr>
+  <tr>
+    <td>Benachrichtigungen<br><code>POST_NOTIFICATIONS</code></td>
+    <td>Zeigt Ihre selbst gesetzten Erinnerungen und die vorgeschriebene Anzeige
+        des laufenden Vordergrunddienstes.</td>
+  </tr>
+  <tr>
+    <td>Start nach Neustart<br><code>RECEIVE_BOOT_COMPLETED</code></td>
+    <td>Stellt Sperre und Erinnerungen nach einem Geräteneustart wieder her.</td>
+  </tr>
+  <tr>
+    <td>Installierte Apps</td>
+    <td>Zur Auswahl der zu sperrenden Apps werden ausschließlich Apps mit einem
+        Startsymbol abgefragt. Die weitreichende Berechtigung
+        <code>QUERY_ALL_PACKAGES</code> wird bewusst <em>nicht</em> verwendet.
+        Die Liste verlässt das Gerät nicht.</td>
+  </tr>
+</table>
+<p>
+  Die außerhalb des Play Store verbreitete Variante der App nutzt zusätzlich einen
+  Bedienungshilfe-Dienst, um den Vordergrundwechsel schneller zu erkennen. Auch er
+  wertet nur den Paketnamen aus und speichert nichts. <strong>Die Fassung im Google
+  Play Store enthält diesen Dienst nicht.</strong>
+</p>
+
+<h2><span class="n">4</span>Weitergabe an Dritte</h2>
+<p>
+  Es findet keine Weitergabe statt. Da die App keine Netzwerkverbindung aufbauen
+  kann, gibt es weder Empfänger noch Auftragsverarbeiter noch eine Übermittlung in
+  Drittländer.
+</p>
+
+<h2><span class="n">5</span>Ihre Rechte</h2>
+<p>
+  Ihnen stehen nach der DSGVO die Rechte auf Auskunft (Art. 15), Berichtigung
+  (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18),
+  Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21) zu, ebenso das Recht auf
+  Beschwerde bei einer Aufsichtsbehörde (Art. 77).
+</p>
+<p>
+  In der Praxis laufen diese Rechte hier ins Leere, weil der Anbieter zu keinem
+  Zeitpunkt Daten von Ihnen erhält. Ihre Daten liegen allein bei Ihnen: Sie löschen
+  sie vollständig, indem Sie in den Android-Einstellungen unter <em>Apps → H4b1ts →
+  Speicher</em> die App-Daten löschen oder die App deinstallieren.
+</p>
+
+<h2><span class="n">6</span>Kinder</h2>
+<p>
+  Die App richtet sich nicht gezielt an Kinder unter 13 Jahren. Da keinerlei Daten
+  erhoben werden, werden auch keine Daten von Kindern erhoben.
+</p>
+
+<h2><span class="n">7</span>Änderungen</h2>
+<p>
+  Sollte eine künftige Version Daten übertragen — etwa für eine optionale
+  Synchronisierung —, wird diese Erklärung vorher angepasst und die Änderung in der
+  App kenntlich gemacht. Maßgeblich ist die jeweils hier veröffentlichte Fassung.
+</p>
+
+<h2><span class="n">8</span>Kontakt</h2>
+<p>
+  Bei Fragen zum Datenschutz: <a href="mailto:[KONTAKT-E-MAIL]">[KONTAKT-E-MAIL]</a>
+</p>
+
+<footer>
+  H4b1ts · Diese Erklärung gilt für die im Google Play Store veröffentlichte
+  Fassung der App sowie für die außerhalb des Stores verbreitete Fassung.
+</footer>
+
+</main>
+</body>
+</html>
