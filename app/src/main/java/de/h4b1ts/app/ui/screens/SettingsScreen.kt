@@ -31,6 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.h4b1ts.app.ui.components.H4Icon
+import de.h4b1ts.app.BuildConfig
 import de.h4b1ts.app.data.SettingsRepository
 import de.h4b1ts.app.ui.components.H4Card
 import de.h4b1ts.app.ui.components.SectionTitle
@@ -209,7 +210,10 @@ fun SettingsScreen(
         item {
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "H4b1ts 0.4.0",
+                // From the build, not typed here: the hard-coded string had
+                // drifted to 0.4.0 while the build said 0.1.0, and a version
+                // number nobody can trust is worse than none.
+                text = "H4b1ts ${BuildConfig.VERSION_NAME}",
                 color = MaterialTheme.colorScheme.outline,
                 fontSize = 14.sp,
             )
