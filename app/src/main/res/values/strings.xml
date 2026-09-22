@@ -34,8 +34,8 @@
     <string name="selftest_body">Opens one of your blocked apps and measures how long it stays visible.</string>
     <string name="selftest_action">Run test</string>
     <string name="selftest_running">Waiting for the result…</string>
-    <string name="selftest_passed">Blocked after %1$d ms via %2$s.</string>
-    <string name="selftest_slow">Blocked after %1$d ms via %2$s — slow enough to notice.</string>
+    <string name="selftest_passed">The app was visible for %1$d ms, then the shield took over via %2$s.</string>
+    <string name="selftest_slow">The app was visible for %1$d ms, then the shield took over via %2$s. That time includes the app starting up, so a heavy app always scores higher.</string>
     <string name="selftest_no_app">Block at least one app first.</string>
     <string name="selftest_not_launchable">That app cannot be opened directly.</string>
     <string name="selftest_no_block">No block fired. Grant display over other apps and try again.</string>

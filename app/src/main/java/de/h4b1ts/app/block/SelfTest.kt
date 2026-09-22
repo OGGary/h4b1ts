@@ -13,7 +13,15 @@ import de.h4b1ts.app.data.BlockRepository
  */
 object SelfTest {
 
-    /** Anything above this and the user sees their feed before the shield. */
+    /**
+     * Above this, the feed is on screen long enough to register.
+     *
+     * Not a verdict on the shield. [collect] measures from the moment the
+     * blocked app is launched, so the app's own cold start sits inside the
+     * number and nothing here can shorten it — measured on a Galaxy S25, Adobe
+     * Scan alone accounts for 141 of 232 ms. The threshold therefore decides
+     * how the result is worded, not whether blocking is working.
+     */
     const val GOOD_LATENCY_MS = 150L
 
     sealed interface State {

@@ -37,6 +37,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import de.h4b1ts.app.data.SettingsRepository
 import de.h4b1ts.app.habits.HabitStore
 import de.h4b1ts.app.habits.Polarity
 import de.h4b1ts.app.ui.components.H4Icon
@@ -45,6 +46,8 @@ import de.h4b1ts.app.ui.components.PixelIconDecoration
 import de.h4b1ts.app.ui.components.Eyebrow
 import de.h4b1ts.app.ui.components.GroupLabel
 import de.h4b1ts.app.ui.components.H4Card
+import org.json.JSONArray
+import org.json.JSONObject
 
 /**
  * How the entry in the scorecard was judged.
@@ -69,23 +72,65 @@ private enum class Mark(val icon: H4Icon, val label: String) {
 
 private data class ScoreEntry(val text: String, val mark: Mark)
 
+/**
+ * The half-filled scorecard, kept across a back gesture.
+ *
+ * Marks are stored by name, so R8 must not rename them — the keep rule in
+ * proguard-rules.pro covers every enum in this package, [Mark] included.
+ * An unreadable or half-written draft is simply dropped: losing a draft is
+ * bad, but starting the app on a crash would be worse.
+ */
+private fun List<ScoreEntry>.toJson(): String =
+    JSONArray().apply {
+        forEach { put(JSONObject().put("text", it.text).put("mark", it.mark.name)) }
+    }.toString()
+
+private fun parseDraft(raw: String?): List<ScoreEntry> {
+    if (raw.isNullOrBlank()) return emptyList()
+    return runCatching {
+        val array = JSONArray(raw)
+        (0 until array.length()).mapNotNull { i ->
+            val item = array.optJSONObject(i) ?: return@mapNotNull null
+            val text = item.optString("text").takeIf { it.isNotBlank() } ?: return@mapNotNull null
+            val mark = runCatching { Mark.valueOf(item.optString("mark")) }.getOrNull()
+                ?: return@mapNotNull null
+            ScoreEntry(text, mark)
+        }
+    }.getOrDefault(emptyList())
+}
+
 @Composable
 fun OnboardingScreen(
     onFinish: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val entries = remember { mutableStateListOf<ScoreEntry>() }
+    val entries = remember {
+        mutableStateListOf<ScoreEntry>().apply { addAll(parseDraft(SettingsRepository.scorecardDraft)) }
+    }
     var draft by remember { mutableStateOf("") }
 
     val good = entries.count { it.mark == Mark.GOOD }
     val bad = entries.count { it.mark == Mark.BAD }
     val willCreate = good + bad
 
+    // Written on every change rather than on the way out: there is no reliable
+    // "on the way out" here, since back finishes the activity.
+    fun persist() {
+        SettingsRepository.scorecardDraft = if (entries.isEmpty()) null else entries.toJson()
+    }
+
     fun add(mark: Mark) {
         val text = draft.trim()
         if (text.isBlank()) return
         entries.add(ScoreEntry(text, mark))
         draft = ""
+        persist()
+    }
+
+    /** The scorecard has served its purpose; it should not outlive the screen. */
+    fun finishAndClear() {
+        SettingsRepository.scorecardDraft = null
+        onFinish()
     }
 
     LazyColumn(
@@ -161,7 +206,10 @@ fun OnboardingScreen(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { entries.removeAt(index) }
+                        .clickable {
+                            entries.removeAt(index)
+                            persist()
+                        }
                         .padding(vertical = 10.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
@@ -200,7 +248,7 @@ fun OnboardingScreen(
                             polarity = polarity,
                         )
                     }
-                    onFinish()
+                    finishAndClear()
                 },
                 enabled = willCreate > 0,
                 modifier = Modifier.fillMaxWidth(),
@@ -214,7 +262,7 @@ fun OnboardingScreen(
                 )
             }
             Spacer(Modifier.height(4.dp))
-            TextButton(onClick = onFinish, modifier = Modifier.fillMaxWidth()) {
+            TextButton(onClick = { finishAndClear() }, modifier = Modifier.fillMaxWidth()) {
                 Text("Skip for now", color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             if (bad > 0) {
