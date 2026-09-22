@@ -22,6 +22,7 @@ object SettingsRepository {
     private const val KEY_THEME = "theme_mode"
     private const val KEY_FALLBACK = "usage_fallback_enabled"
     private const val KEY_ONBOARDED = "onboarding_done"
+    private const val KEY_SCORECARD = "scorecard_draft"
     private const val KEY_COOLDOWN_MIN = "cooldown_minutes"
     private const val KEY_COOLDOWN_TARGET = "cooldown_minutes_target"
 
@@ -120,6 +121,27 @@ object SettingsRepository {
         get() = prefs?.getBoolean(KEY_ONBOARDED, false) ?: false
         set(value) {
             prefs?.edit()?.putBoolean(KEY_ONBOARDED, value)?.apply()
+        }
+
+    /**
+     * The scorecard as it stands while it is being filled in, as JSON.
+     *
+     * Compose state would be enough for a rotation, and `rememberSaveable` would
+     * cover the process dying with the task kept — but neither survives the back
+     * gesture, which finishes the activity and throws the saved state away. On a
+     * screen whose only other exit is "skip", back reads as "go back", not as
+     * "discard what I just typed", and someone listing ten habits should not
+     * lose them to a phone call either.
+     *
+     * Cleared the moment the scorecard is turned into habits or skipped, so it
+     * never outlives the one screen that uses it.
+     */
+    var scorecardDraft: String?
+        get() = prefs?.getString(KEY_SCORECARD, null)
+        set(value) {
+            prefs?.edit()?.apply {
+                if (value.isNullOrBlank()) remove(KEY_SCORECARD) else putString(KEY_SCORECARD, value)
+            }?.apply()
         }
 
     /**
