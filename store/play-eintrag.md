@@ -12,91 +12,104 @@ nicht.
 
 ## 1. Eintragstexte
 
+**Die Store-Sprache ist Englisch.** Die App ist durchgehend englisch — es gibt
+nur `values`, keinen `values-de`-Ordner. Ein deutscher Eintrag würde jemandem
+„Gewohnheiten aufbauen“ versprechen und eine englische App liefern. In der Play
+Console ist **English (United States)** als Standardsprache zu wählen.
+
+Deutsch kann später als zusätzliche Übersetzung dazukommen — sinnvollerweise
+erst, wenn auch die App übersetzt ist. Die deutschen Fassungen stehen unten
+aufgehoben.
+
 ### App-Name (max. 30 Zeichen)
 
 ```
-H4b1ts: Gewohnheiten & Fokus
+H4b1ts: Habits & Focus
 ```
 
-28 Zeichen.
+22 Zeichen. Die Marke vorn, dahinter die beiden Suchbegriffe. „Habits“ allein
+wäre im Store unauffindbar, „H4b1ts“ allein sucht niemand.
 
 ### Kurzbeschreibung (max. 80 Zeichen)
 
 ```
-Gewohnheiten aufbauen, ablenkende Apps sperren. Ohne Konto, ohne Datenabfluss.
+Build habits, lock the apps that get in the way. No account, no internet.
 ```
 
-78 Zeichen.
+73 Zeichen.
 
 ### Vollbeschreibung (max. 4000 Zeichen)
 
 ```
-H4b1ts ist ein Gewohnheits-Tracker, der auch sperren kann. Beides gehört
-zusammen: Eine gute Gewohnheit aufzubauen und eine schlechte loszuwerden sind
-dieselbe Aufgabe von zwei Seiten.
+H4b1ts is a habit tracker that can also lock apps. The two belong together:
+building a good habit and dropping a bad one are the same job seen from two
+sides.
 
-IDENTITÄT STATT PUNKTESTAND
+IDENTITY, NOT A SCORE
 
-Jede Gewohnheit hängt an einem Satz: "Ich bin jemand, der ..." Jede Erledigung
-ist eine Stimme dafür. Nicht die Serie ist das Ziel, sondern der Mensch, der
-sie führt.
+Every habit hangs on a sentence: "I am someone who ..." Each time you tick it
+off, that is one vote for the sentence. The streak is not the goal; the person
+keeping it is.
 
-NIE ZWEIMAL AUSLASSEN
+NEVER MISS TWICE
 
-Ein verpasster Tag bricht Ihre Serie nicht. Zwei hintereinander schon. Ein
-schlechter Tag ist ein Unfall, zwei sind der Anfang einer neuen Gewohnheit —
-und genau davor warnt die App, statt Sie für den ersten Ausrutscher zu
-bestrafen.
+One missed day does not break your streak. Two in a row does. A bad day is an
+accident, two are the start of a new habit - and that is what the app warns you
+about, instead of punishing the first slip.
 
-DIE ZWEI-MINUTEN-VARIANTE
+THE TWO-MINUTE VERSION
 
-Jede Gewohnheit speichert eine Mini-Version für schlechte Tage. Nicht
-"eine Stunde laufen", sondern "Laufschuhe anziehen". An den Tagen, an denen
-nichts geht, geht das.
+Every habit stores a smaller version for bad days. Not "run for an hour" but
+"put your running shoes on". On the days when nothing works, that still does.
 
-DIE SPERRE
+THE SHIELD
 
-Wählen Sie Apps, die Sie zu oft öffnen. H4b1ts legt einen Sperrbildschirm
-darüber, der zeigt, was der Griff gerade kostet. Kein Schloss, sondern
-Reibung: ein Countdown, eine Tippaufgabe, eine Ausnahme von einer Minute,
-wenn Sie sie wirklich brauchen.
+Pick the apps you open too often. H4b1ts puts a lock screen over them that
+shows what reaching for them costs right now. Not a wall, but friction: a
+countdown, a typing task, and a one-minute exception when you genuinely need
+one.
 
-Sie können eine App auch an eine Gewohnheit koppeln — erst der Lauf, dann der
-Feed.
+You can also tie an app to a habit - the run first, then the feed.
 
-FOKUS-SITZUNGEN
+FOCUS SESSIONS
 
-Eine Sitzung starten, und für ihre Dauer ist nur da, was Sie vorher erlaubt
-haben. Die Sitzung zeigt Ihre Gewohnheiten und Aufgaben des Tages, statt Sie
-nur auszusperren.
+Start a session and for its length only what you allowed beforehand is there.
+The session shows your habits and tasks for the day rather than just shutting
+you out.
 
-AUSSERDEM
+ALSO INSIDE
 
-- Aufgaben mit Wiederholungen und Erinnerungen
-- Notizen mit Bildern
-- Rückschau: Heatmap über Ihre Gewohnheiten, Tageszähler über rund ein Jahr
-- Hell- und Dunkelmodus, zwei Akzentfarben, kontraststarkes Design
-- Pixelart-Oberfläche
+- Tasks with repeats and reminders
+- Notes with pictures
+- Looking back: a heatmap of your habits, daily counts over roughly a year
+- Light and dark themes, two accent colours, a pixel-art interface
 
-IHRE DATEN BLEIBEN BEI IHNEN
+YOUR DATA STAYS WITH YOU
 
-H4b1ts hat keine Internet-Berechtigung. Das heißt: Die App kann technisch
-keine Verbindung ins Netz aufbauen. Kein Konto, keine Anmeldung, keine
-Analyse-Bibliotheken, keine Werbung, keine Übertragung — nicht weil wir es
-versprechen, sondern weil das Programm es nicht kann.
+H4b1ts has no internet permission. That means the app cannot open a network
+connection at all. No account, no sign-in, no analytics libraries, no ads,
+nothing transmitted - not because we promise it, but because the program
+cannot.
 
-Alles liegt im app-privaten Speicher Ihres Geräts und verschwindet
-rückstandslos, wenn Sie die App deinstallieren.
+Everything lives in your device's private app storage and disappears without a
+trace when you uninstall.
 
-BERECHTIGUNGEN
+PERMISSIONS
 
-Für die Sperre braucht die App den Zugriff auf Nutzungsdaten, um zu erkennen,
-welche App gerade vorn ist. Ausgewertet wird nur der Name der sichtbaren App,
-nur im Arbeitsspeicher. Es wird kein Nutzungsverlauf und keine Nutzungsdauer
-gespeichert.
+To lock apps, H4b1ts needs usage access so it can tell which app is in the
+foreground. Only the name of the visible app is read, and only in memory. No
+usage history and no usage time is stored.
 ```
 
-Rund 2.300 Zeichen — reichlich Luft unter dem Limit.
+Rund 2.100 Zeichen, reichlich Luft unter dem Limit.
+
+### Deutsch — aufgehoben für eine spätere Übersetzung
+
+Nicht eintragen, solange die App englisch ist.
+
+- Name: `H4b1ts: Gewohnheiten & Fokus` (28 Zeichen)
+- Kurz: `Gewohnheiten aufbauen, ablenkende Apps sperren. Ohne Konto, ohne Datenabfluss.` (78)
+- Die deutsche Vollbeschreibung steht in der Git-Historie dieses Dokuments.
 
 ---
 
