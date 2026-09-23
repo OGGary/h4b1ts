@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Foreground Service — H4b1ts</title>
+<style>
+  :root {
+    --bg: #0E0E14;
+    --surface: #16161F;
+    --text: #E8E8EE;
+    --mid: #9A9AA8;
+    --accent: #C6FF00;
+    --line: #2A2A36;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 16px 96px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, Consolas, monospace;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.6rem; letter-spacing: 0.05em; margin: 0 0 4px; }
+  .sub { color: var(--mid); margin: 0 0 40px; font-size: 0.9rem; }
+  h2 {
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    margin: 40px 0 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  a { color: var(--accent); }
+  video {
+    width: 100%;
+    max-width: 380px;
+    display: block;
+    margin: 0 auto 8px;
+    background: #000;
+    border: 1px solid var(--line);
+  }
+  .caption { color: var(--mid); font-size: 0.85rem; text-align: center; margin: 0 0 8px; }
+  ol { padding-left: 1.4em; }
+  li { margin-bottom: 6px; }
+  code { background: var(--surface); padding: 1px 5px; font-size: 0.85em; }
+  .block {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 16px 0;
+  }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--mid); font-size: 0.82rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Foreground service declaration</h1>
+<p class="sub">H4b1ts · <code>de.h4b1ts.app</code> · demonstration of
+  <code>FOREGROUND_SERVICE_SPECIAL_USE</code></p>
+
+<video controls playsinline preload="metadata" src="foreground-service-demo.mp4"></video>
+<p class="caption">Recorded on a Samsung Galaxy S25, Android 16, from the signed release build.</p>
+
+<h2>What the recording shows</h2>
+<ol>
+  <li>The Shield screen, where the user has granted the permissions and can test that blocking works.</li>
+  <li>The user leaves the app and opens an app they had previously chosen to block.</li>
+  <li>The lock screen appears immediately, naming the blocked app and offering a
+      countdown and a one-minute exception.</li>
+</ol>
+
+<h2>Why the special use type</h2>
+<div class="block">
+  The app blocks apps the user has chosen to block. To do that it must know which
+  app is in the foreground while the screen is on. When a blocked app is opened,
+  H4b1ts shows a lock screen immediately, so the result is directly visible to the
+  user.
+</div>
+<p>
+  The service starts only once the user has enabled blocking and picked at least
+  one app. It pauses when the screen turns off and shows an ongoing notification
+  the whole time it runs.
+</p>
+<p>
+  None of the predefined foreground service types describes this: no data is
+  synced — the app has no <code>INTERNET</code> permission at all — no media is
+  played, no location requested, no camera or microphone used.
+  <code>shortService</code> does not apply either, because blocking has to keep
+  working rather than end after a few minutes.
+</p>
+<p>
+  Only the package name of the currently visible app is read, and only in memory.
+  No usage history and no usage duration is stored, and nothing leaves the device.
+</p>
+
+<footer>
+  H4b1ts · <a href="index.html">Overview</a> ·
+  <a href="datenschutz.html">Datenschutzerklärung</a> ·
+  <a href="impressum.html">Impressum</a>
+</footer>
+
+</main>
+</body>
+</html>
